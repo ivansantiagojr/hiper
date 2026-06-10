@@ -1,0 +1,7 @@
+return {
+    default = {
+        verbose = true,
+        output = 'gtest',
+        ['lua-path'] = './src/?.lua;./src/?/init.lua;;',
+    },
+}
