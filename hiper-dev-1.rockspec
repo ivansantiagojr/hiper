@@ -15,7 +15,9 @@ dependencies = {
 }
 build = {
     type = 'builtin',
-    modules = {},
+    modules = {
+        ['hiper'] = 'src/hiper/init.lua',
+    },
 }
 test_dependencies = {
     'busted',
