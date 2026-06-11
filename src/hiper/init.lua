@@ -18,7 +18,13 @@ end
 
 function Hiper:serve()
     self.server:start(function(request, response)
-        print("It's running...")
+        for _, route in ipairs(self.routes) do
+            if route.method == request:method() and route.path == request:path() then
+                route.handler(request, response)
+                return
+            end
+        end
+        response:statusCode(404, 'Path not found'):write('What are you trying to access??')
     end)
 end
 
