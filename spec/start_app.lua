@@ -1,4 +1,7 @@
-local Hiper = require('src.hiper')
+-- setup path to find the project source files of Hiper
+package.path = "./src/?.lua;./src/?/init.lua;" .. package.path
+
+local Hiper = require('hiper')
 
 local app = Hiper:new()
 
