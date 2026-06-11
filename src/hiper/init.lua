@@ -1,15 +1,18 @@
 local Hiper = {}
 Hiper.__index = Hiper
 
-function Hiper:new()
+function Hiper:new(params)
+    params = params or {}
     local app = {}
+
+    app.port = params.port or '9090'
 
     app.routes = {}
 
     local pegasus = require('pegasus')
 
     app.server = pegasus:new({
-        port = '9090',
+        port = app.port,
         location = 'example/root',
     })
 
